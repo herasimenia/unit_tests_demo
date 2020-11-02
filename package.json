@@ -1,0 +1,42 @@
+{
+	"name": "unit_tests",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"directories": {
+		"test": "test"
+	},
+	"scripts": {
+		"test": "mocha",
+		"lint": "eslint ./",
+		"coverage": "nyc npm test"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"eslint": "^7.12.1",
+		"eslint-config-google": "^0.14.0",
+		"husky": "^4.3.0",
+		"mocha": "^8.2.0",
+		"mochawesome": "^6.2.1",
+		"nyc": "^15.1.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:herasimenia/unit_tests_demo.git"
+	},
+	"homepage": "",
+	"nyc": {
+		"reporter": "html",
+		"check-coverage": true,
+		"branches": 15,
+		"lines": 40,
+		"functions": 50
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm run coverage"
+		}
+	}
+}
